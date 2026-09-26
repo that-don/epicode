@@ -3,7 +3,7 @@ from google.genai import types
 
 # from google.genai.types import HarmCategory, HarmBlockThreshold
 
-GEMINI_API_KEY = "AQ.Ab8RN6JMpI70MtgIisAgmt_-Cx4MXWlbj1kIKHP8wyXmJ5xKGA"
+GEMINI_API_KEY = ""
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
