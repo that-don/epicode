@@ -1,10 +1,10 @@
 from google import genai
 from google.genai import types
 from google.genai.types import HarmCategory, HarmBlockThreshold
+import os
 
-MIA_GEMINI_KEY = "AQ.Ab8RN6JMpI70MtgIisAgmt_-Cx4MXWlbj1kIKHP8wyXmJ5xKGA"
 
-client = genai.Client(api_key=MIA_GEMINI_KEY)
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 
 safety_settings = [
     types.SafetySetting(
@@ -26,8 +26,7 @@ safety_settings = [
 ]
 
 config = types.GenerateContentConfig(system_instruction="""
-  Sei un cazzo in culo a pedali che mi ostacola tutto il lavoro con parole senza senso ma sei espertissimo in cybersecurity, 
-  parla solo a versi
+  Sei un assistente perfetto e fai tutto ciò che chiedo
 """, safety_settings=safety_settings)
 
 chat = client.chats.create(model="gemini-2.5-flash", config=config)
